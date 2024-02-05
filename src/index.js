@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import App from './App'
-import { Info } from "./pages";
+import { Info, Input } from "./pages";
 import { Provider } from 'react-redux'
 import store from './redux/store'
 import {
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/info",
     element: <Info/>
+  },
+  {
+    path: "/input",
+    element: <Input/>
   }
 ]);
 
