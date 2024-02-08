@@ -22,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/input",
     element: <Input/>
+  },
+  {
+    path: "/ping",
+    element: <>Pong</>
   }
 ]);
 
