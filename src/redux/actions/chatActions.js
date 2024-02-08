@@ -17,12 +17,9 @@ export const getChatActions = (dispatch)=>{
 }
 
 export const fetchChatActions = (startDate, endDate) => {
-    // console.log('chk2')
     return async (dispatch) => {
-        // console.log("2")
         dispatch({ type: ChatActions.FETCH_CHAT_RECORDS_BEGIN });
         try {
-          // console.log("1")
           const content = await fetchByDate(startDate, endDate);
           const payload = content.data;
           dispatch({

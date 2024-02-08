@@ -10,17 +10,14 @@ import {
   Box,
   Button,
 } from "@mui/material";
-// import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-// import { getChatActions } from '../../../redux/actions/chatActions';
 
 // Styles:
 import { Wrapper } from "./styles";
 import { useDispatch } from "react-redux";
 import moment from "moment";
-import dayjs from "dayjs";
 import { getChatActions } from "../../redux/actions/chatActions";
 
 const StyledFormControl = styled(FormControl)`
@@ -82,9 +79,7 @@ const Filters = (props) => {
   );
 
   const handleApplyFilter = () => {
-    console.log(moment(props.startDate).format('YYYY-MM-DD[T]HH:MM:SS'), moment(props.endDate).format('YYYY-MM-DD[T]HH:MM:SS'))
-    // chatActions.fetchChatRecordsV3(props.orgId, props.startDate, props.endDate);
-    // chatActions.fetchChatActions(moment(props.startDate).format('YYYY-MM-DD[T]HH:MM:SS'), moment(props.endDate).format('YYYY-MM-DD[T]HH:MM:SS'));
+    chatActions.fetchChatActions(moment(props.startDate).format('YYYY-MM-DD[T]HH:mm:ss'), moment(props.endDate).format('YYYY-MM-DD[T]HH:mm:ss'));
   };
 
   // Return:

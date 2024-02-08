@@ -6,7 +6,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   height: 99%;
   width: 99%;
-  margin-top: 7rem;
+  margin-top: 1rem;
 `
 
 export const Wrapper = styled.div`

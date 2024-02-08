@@ -15,12 +15,13 @@ export const fetchByDate = async (startDate, endDate) => {
   }
 };
 
-export const registerQuery = async (gptModel, query) => {
+export const registerQuery = async (gptModel, query, email) => {
   try {
     const url = `${PROCESS_QUERY}`;
     const response = await axios.post(url, {
       gptModel: gptModel,
       query: query,
+      user: email
     });
     return response;
   } catch (error) {

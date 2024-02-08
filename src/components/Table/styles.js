@@ -10,9 +10,9 @@ export const Wrapper = styled.div`
   background: #ffffff;
   height: 100%;
   padding: 5px;
-  max-height: 730px;
   border-radius: 4px;
   color: #333333;
+  margin: 10px
 `
 
 export const RecordsTable = styled.table`
@@ -24,13 +24,23 @@ export const RecordsTable = styled.table`
   overflow: hidden;
   margin: 0 auto;
   border-collapse: collapse;
+  // table-layout: fixed;
 
   td {
     padding: 7px 6px;
+    text-overflow: ellipsis;
   }
 
+  th{
+    min-width: 80px
+  }
+
+  th, td {
+    word-wrap: break-word;
+}
+
   tr {
-    min-height: 48px;
+    height: 48px;
     overflow: hidden;
   }
 `

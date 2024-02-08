@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to API-Logger</h1>
+      <h3>Please headout to /input for giving the input</h3>
+      <h3>Please headout to /info for seeing the api responses, that has inbuilt sorting and searching on all fields, and the data is filterable by date, so we can select the specified date and get the data corresponding to it</h3>
+      <h3>Hope you like it.</h3>
+      <h4>I am adding new changes to it, please wait till today</h4>
     </div>
   );
 }

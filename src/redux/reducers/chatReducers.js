@@ -10,11 +10,9 @@ const initialState = {
 const chatReducer = produce((draft, action) => {
   switch (action.type) {
     case ChatActions.FETCH_CHAT_RECORDS_BEGIN:
-      // console.log("anmol");
       draft.loading = true;
       return;
     case ChatActions.FETCH_CHAT_RECORDS_SUCCESS_TRACK:
-      // console.log("anmol2");
       draft.loading = false;
       draft.chatRecords = action.payload;
       return;
