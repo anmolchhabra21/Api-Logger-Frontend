@@ -13,6 +13,7 @@ import Pagination from "../Pagination";
 import { getChatActions } from "../../redux/actions/chatActions";
 import { ColumnFilter } from "./ColumnFilter";
 import { Wrapper, RecordsTable, Header, Body, Title, Filters } from "./styles";
+import moment from "moment";
 
 // Functions:
 const Table = (props) => {
@@ -70,7 +71,8 @@ const Table = (props) => {
   useEffect(() => {
     // chatActions.fetchChatRecords(org_id);
     // chatActions.fetchChatRecordsV3(org_id, props.startDate, props.endDate);
-    chatActions.fetchChatActions("2017-02-03T20:40:39", "2024-02-06 13:02:00");
+    // console.log("props", props.startDate, props.endDate);
+    chatActions.fetchChatActions(moment(props.startDate).format('YYYY-MM-DD[T]HH:mm:ss'), moment(props.endDate).format('YYYY-MM-DD[T]HH:mm:ss'));
   }, [bit]);
 
   useDeepCompareEffect(() => {

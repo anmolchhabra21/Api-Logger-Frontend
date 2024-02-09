@@ -10,7 +10,7 @@ import {
   Box,
   Button,
 } from "@mui/material";
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
@@ -19,6 +19,7 @@ import { Wrapper } from "./styles";
 import { useDispatch } from "react-redux";
 import moment from "moment";
 import { getChatActions } from "../../redux/actions/chatActions";
+import { Link } from "react-router-dom";
 
 const StyledFormControl = styled(FormControl)`
   margin-top: 1rem;
@@ -59,8 +60,8 @@ const StyledDesktopDatePicker = styled(DatePicker)`
 
 // Functions:
 const Filters = (props) => {
-    const dispatch = useDispatch();
-    const chatActions = getChatActions(dispatch)
+  const dispatch = useDispatch();
+  const chatActions = getChatActions(dispatch);
 
   // Event Handlers:
   const handleDateRangeChange = useCallback(
@@ -79,7 +80,10 @@ const Filters = (props) => {
   );
 
   const handleApplyFilter = () => {
-    chatActions.fetchChatActions(moment(props.startDate).format('YYYY-MM-DD[T]HH:mm:ss'), moment(props.endDate).format('YYYY-MM-DD[T]HH:mm:ss'));
+    chatActions.fetchChatActions(
+      moment(props.startDate).format("YYYY-MM-DD[T]HH:mm:ss"),
+      moment(props.endDate).format("YYYY-MM-DD[T]HH:mm:ss")
+    );
   };
 
   // Return:
@@ -135,7 +139,7 @@ const Filters = (props) => {
               label="Start Date"
               value={moment(props.startDate)}
               onChange={handleStartDateChange}
-            //   renderInput={(params) => <TextField {...params} />}
+              //   renderInput={(params) => <TextField {...params} />}
             />
           </div>
         </LocalizationProvider>
@@ -148,7 +152,7 @@ const Filters = (props) => {
               label="End Date"
               value={moment(props.endDate)}
               onChange={handleEndDateChange}
-            //   renderInput={(params) => <TextField {...params} />}
+              //   renderInput={(params) => <TextField {...params} />}
             />
           </div>
         </LocalizationProvider>
@@ -166,6 +170,21 @@ const Filters = (props) => {
         >
           Apply Filters
         </Button>
+        <Link to={"../input"}>
+          <Button
+            variant="contained"
+            size="medium"
+            sx={{
+              background: "green",
+              textTransform: "none",
+              width: "10%",
+              height: "100%",
+              marginTop: "1.5rem",
+            }}
+          >
+            Chat
+          </Button>
+        </Link>
       </Box>
     </Wrapper>
   );

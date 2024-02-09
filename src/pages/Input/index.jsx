@@ -14,6 +14,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { registerQuery } from "../../api";
 import { TextareaAutosize as BaseTextareaAutosize } from "@mui/base/TextareaAutosize";
 import { styled } from "@mui/system";
+import { Link } from "react-router-dom";
 
 const Input = () => {
   const blue = {
@@ -156,6 +157,21 @@ const Input = () => {
             : "No Response"
         }
       />
+      <Link to={"../info"}>
+        <Button
+          variant="contained"
+          size="medium"
+          sx={{
+            background: "green",
+            textTransform: "none",
+            width: "10%",
+            height: "100%",
+            marginTop: "1.5rem",
+          }}
+        >
+          Tables
+        </Button>
+      </Link>
     </Container>
   );
 };
