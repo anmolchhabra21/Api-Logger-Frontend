@@ -152,11 +152,19 @@ const Table = (props) => {
                       if (cell.column.Header === "Status") {
                         return (
                           <td {...cell.getCellProps()}>
-                            <Chip
-                              label="success"
-                              color="success"
-                              variant="outlined"
-                            />{" "}
+                            {row.original.status ? (
+                              <Chip
+                                label="success"
+                                color="success"
+                                variant="outlined"
+                              />
+                            ) : (
+                              <Chip
+                                label="error"
+                                color="error"
+                                variant="outlined"
+                              />
+                            )}
                           </td>
                         );
                       } else if (cell.column.Header === "Created At") {
